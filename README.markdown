@@ -40,33 +40,32 @@ It means when making arbitrary decision about a design compromise, Viper favors 
 If something works better for 99% of use cases, let's optimize for that.
 
 * What does 'zero-overhead' mean?
-It means your compiler should compile away the Viper layer, so your code is as fast as if you had written
-the STL logic by hand, leaving your source code small and readable and your binary fast.
+It means your compiler should compile away the Viper layer, so your code is as fast as if it had been
+written using the most idiomatic C++ with STL, only more verbose.
+It some instances where Viper is return a lazy-evaluation object, it can even be faster.
 
 # Examples
 
-## Enumerate elements of an iterable
+## Enumerate elements of an Container
 ```c++
 std::vector<char> vc = {'a', 'b', 'c'};
 
-for( auto [index, character] : enumerate(puzzle) ) {
-    printf(" vc[%lu] = '%c' \n", index, characer);
+// this is C++17 syntax
+for( auto&& [index, character] : enumerate(puzzle) ) {
+    printf(" vc[%lu] = '%c' \n", index, character);
 }
-
-\*
+```
 prints out:
 vc[0] = 'a'
 vc[1] = 'b'
 vc[2] = 'c'
-*/
-```
 
 ## Filter elements of a Container
 ```c++
-std::vector<int> vi = {1,2,3,4,5};
+std::vector<int> some_integers = {1,2,3,4,5};
 auto odd = [](int i) { return i % 2 == 1; };
 
-decltype(vi) odd_numbers = filter(odd, vi);
+decltype(vi) odd_numbers = filter(odd, some_integers);
 ```
 
 ## Test membership to a Container
@@ -101,7 +100,8 @@ viper.hpp
 ```
 
 # Design
-Loosely inspired by Python iterator interface.
+Loosely inspired by Python's iterator interface.
+While not catering to Python developers specifically, viper should feel natural for them and help transition to C++.
 
 # License
 MIT License. 
@@ -118,15 +118,17 @@ cd Debug
 # that should populate Debug with the subprojects
 cmake -DCMAKE_BUILD_TYPE=Debug ..
 
-# should make a 'tests' binary with debug symbols
-cd tests
 make
 
-# to make a Release version, same instructions, but use Release wherever Debug is used.
+# should make a 'tests' binary with debug symbols
+cd 17/tests
+make # if you run make in 17/tests it will only build 17/tests/tests
 
 # to launch the tests:
-./tests
+./tests17
 
 # to debug the tests (assuming you're using LLVM's lldb)
-lldb ./tests
+lldb ./tests17
+
+# to make a Release version, same instructions, but use Release wherever Debug is used.
 ```
