@@ -56,16 +56,20 @@ for( auto&& [index, character] : enumerate(puzzle) ) {
 }
 ```
 prints out:
+
 vc[0] = 'a'
+
 vc[1] = 'b'
+
 vc[2] = 'c'
+
 
 ## Filter elements of a Container
 ```c++
-std::vector<int> some_integers = {1,2,3,4,5};
+std::vector<int> vi = {1,2,3,4,5};
 auto odd = [](int i) { return i % 2 == 1; };
 
-decltype(vi) odd_numbers = filter(odd, some_integers);
+decltype(vi) odd_numbers = filter(odd, vi);
 ```
 
 ## Test membership to a Container
