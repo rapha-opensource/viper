@@ -11,7 +11,7 @@ That is the reason why we produce multiple versions of the header file, so a lat
 by a missing feature in a previous version of C++.
 
 * What does 'header-only' mean?
-It means not separate compilation steps needed.
+It means no separate compilation steps needed.
 It means trivial integration with your project, just copy the header file and build.
 
 * What does 'simplified' mean?
