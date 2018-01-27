@@ -1,1 +1,1 @@
-add_executable(tests filter.cpp iterator_cast.cpp main.cpp)
+add_executable(tests enumerate.cpp filter.cpp in.cpp iterator_cast.cpp into.cpp main.cpp)

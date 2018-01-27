@@ -137,16 +137,3 @@ SCENARIO(" filter function ", " [filter] ") {
     }
 
 }
-
-TEST_CASE(" 'in' function ", " [in] ") {
-
-        vi_t vi = {1,2,3,4};
-        int i = 4;
-
-        REQUIRE( in(vi, i) ); // i is an l-value
-        REQUIRE( in(vi, 2) ); // 2 is an r-value
-        REQUIRE( in(vi, 3) );
-        REQUIRE( in(vi, 4) );
-        REQUIRE( in(vi_t{1,2,3,4}, 3) ); // vit_t{...} is an r-value
-
-}
