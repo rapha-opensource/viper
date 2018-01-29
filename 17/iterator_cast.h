@@ -1,6 +1,6 @@
+#include <iostream>
 #include <iterator>
 
-#include <iostream>
 
 template<class Iterator, class UnaryFunction>
 
@@ -268,57 +268,3 @@ class FilterIterator<T*> {
             return iterator;
         }
 };
-
-
-template<class ContainerOut, class ContainerIn>
-ContainerOut filter(const typename FilterIterator<typename ContainerIn::const_iterator>::predicate_t& fn, const ContainerIn& in) {
-    using filter_type_t = FilterIterator<typename ContainerIn::const_iterator>;
-    ContainerOut out{
-        filter_type_t(
-                in.cbegin(),
-                in.cend(),
-                fn
-                ),
-        filter_type_t(
-                in.cend(),
-                in.cend(),
-                fn
-                ),
-    };
-    return out;
-}
-
-
-template<class ContainerIn>
-ContainerIn filter(const typename FilterIterator<typename ContainerIn::const_iterator>::predicate_t& fn, const ContainerIn& in) {
-    using filter_type_t = FilterIterator<typename ContainerIn::const_iterator>;
-    ContainerIn out{
-        filter_type_t(
-                in.cbegin(),
-                in.cend(),
-                fn
-                ),
-        filter_type_t(
-                in.cend(),
-                in.cend(),
-                fn
-                ),
-    };
-    return out;
-}
-
-
-template<class Container>
-constexpr bool in(const Container& c, typename Container::const_reference value) {
-    return std::find(c.cbegin(), c.cend(), value) != c.cend();
-}
-
-template<class Container>
-constexpr bool in(const Container& c, typename Container::value_type&& value) {
-    return std::find(c.cbegin(), c.cend(), value) != c.cend();
-}
-
-template<class Container>
-constexpr bool in(Container&& c, typename Container::value_type&& value) {
-    return std::find(c.cbegin(), c.cend(), value) != c.cend();
-}

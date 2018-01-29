@@ -1,9 +1,8 @@
 #include <array>
-#include <type_traits>
 #include <vector>
 
 #include "catch.hpp"
-#include "../iterator_cast.h"
+#include "../filter.h"
 
 
 using vi_t = std::vector<int>;
