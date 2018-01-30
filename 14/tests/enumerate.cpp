@@ -8,7 +8,7 @@
 #include <vector>
 
 #include "catch.hpp"
-#include "../enumerate.h"
+#include "../headers/enumerate.h"
 
 
 TEST_CASE(" enumerate the contents of a container ", "[enumerate]") {

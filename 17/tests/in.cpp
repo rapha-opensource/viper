@@ -1,7 +1,7 @@
 #include <vector>
 
 #include "catch.hpp"
-#include "../in.h"
+#include "../headers/in.h"
 
 
 TEST_CASE(" 'in' function ", " [in] ") {

@@ -2,7 +2,7 @@
 #include <vector>
 
 #include "catch.hpp"
-#include "../filter_iterator.h"
+#include "../headers/filter_iterator.h"
 
 
 using vi_t = std::vector<int>;

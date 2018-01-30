@@ -100,7 +100,8 @@ std::cout<< numbers <<std::endl;
 Simply copy the header file into your project.
 We produce several versions of the header, one for each C++ version.
 ```bash
-viper.hpp
+14/viper.h
+17/viper.h
 ```
 
 # Design

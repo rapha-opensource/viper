@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "catch.hpp"
-#include "../iterator_cast.h"
+#include "../headers/iterator_cast.h"
 
 
 SCENARIO( "iterator_cast wrapping an iterator object", "[iterator_cast], [object]" ) {

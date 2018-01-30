@@ -2,7 +2,7 @@
 #include <vector>
 
 #include "catch.hpp"
-#include "../filter.h"
+#include "../headers/filter.h"
 
 
 using vi_t = std::vector<int>;

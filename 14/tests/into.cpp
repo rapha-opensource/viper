@@ -1,7 +1,7 @@
 #include <vector>
 
 #include "catch.hpp"
-#include "../iterator_cast.h"
+#include "../headers/iterator_cast.h"
 
 
 SCENARIO(" 'into' with only an input container, no transformation", "[into]") {
