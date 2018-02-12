@@ -1,7 +1,7 @@
+#include <functional>
 #include <iterator>
 #include <algorithm>
 #include <utility>
-#include <functional>
 
 
 /*
@@ -105,7 +105,7 @@ class FilterIterator : public Iterator {
     private:
     
     predicate_t _filter;
-    const Iterator& _end;
+    Iterator _end;
 
     inline void move_to_next_valid_value() {
         while( (*this!=_end) && !_filter(**this)) Iterator::operator++();
@@ -127,7 +127,7 @@ class FilterIterator : public Iterator {
         }
 
     FilterIterator& operator=(const FilterIterator& other) {
-        if( this != other ) {
+        if( this != &other ) {
             _filter = other._filter;
             _end = other._end;
         }

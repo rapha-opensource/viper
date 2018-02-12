@@ -109,6 +109,17 @@ SCENARIO( "FilterIterator wrapping an iterator object", "[FilterIterator]" ) {
 
 }
 
+TEST_CASE(" operator= ", "[FilterIterator], [assignment], [operator=]") {
+    std::vector<int> vi {1,2,3,4};
+    auto even = [](int i) { return (i&1) == 0; };
+
+    using fi_t = FilterIterator<decltype(vi)::iterator>;
+    auto begin = fi_t(vi.begin(), vi.end(), even);
+    auto end = fi_t(vi.end(), vi.end(), even);
+    auto end2 = fi_t(vi.end(), vi.end(), even);
+    end = end2;
+}
+
 TEST_CASE(" FilterIterator specialization for pointer types ", " [FilterIterator], [pointer] ") {
     std::array<int, 4> some_ints = {1,2,3,4};
 
