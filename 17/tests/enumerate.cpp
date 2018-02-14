@@ -20,6 +20,17 @@ TEST_CASE(" enumerate the contents of a container ", "[enumerate]") {
 }
 
 
+TEST_CASE(" writable content ", "[write]") {
+    std::vector<int> vi{1,2,3,4}, vo{2,4,6,8};
+
+    for( auto&& [index, value] : enumerate(vi) ) {
+        value *= 2;
+    }
+
+    REQUIRE( vi == vo );
+}
+
+
 TEST_CASE(" enumerate a std::array ", "[enumerate] [array]") {
 
     std::array<int, 5> ai {1,2,3,4,5};

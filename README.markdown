@@ -63,6 +63,22 @@ vc[1] = 'b'
 
 vc[2] = 'c'
 
+## Ranges
+```c++
+for( auto i : range(1,4) ) {
+    cout << i << endl;
+}
+
+// prints:
+// 1
+// 2
+// 3
+```
+
+```c++
+auto vi = into<std::vector<int>>(range(1,5));
+// vi == {1,2,3,4}
+```
 
 ## Filter elements of a Container
 ```c++

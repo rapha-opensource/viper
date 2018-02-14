@@ -119,7 +119,7 @@ inline auto iterator_cast(const T* iter, UnaryFunction&& convert) {
 
 template<class T, class Container>
 T into(const Container& c) {
-    return T(c.cbegin(), c.cend());
+    return T(c.begin(), c.end());
 }
 
 

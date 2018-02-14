@@ -7,5 +7,6 @@ add_executable(
     into.cpp
     iterator_cast.cpp
     merged_header.cpp
+    range.cpp
     main.cpp
     )
