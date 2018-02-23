@@ -3,6 +3,7 @@ add_executable(
     enumerate.cpp
     filter_iterator.cpp
     filter.cpp
+    grid.cpp
     in.cpp
     into.cpp
     iterator_cast.cpp

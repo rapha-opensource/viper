@@ -2,7 +2,6 @@
 #define __VIPER_RANGE__
 
 #include <iterator>
-#include <utility>
 
 
 template <class T>

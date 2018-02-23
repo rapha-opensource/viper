@@ -1,6 +1,7 @@
 #include <vector>
 
 #include "catch.hpp"
+
 #include "../headers/range.h"
 #include "../headers/iterator_cast.h"
 
