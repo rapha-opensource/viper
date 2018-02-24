@@ -1,7 +1,11 @@
-#include <functional>
 #include <utility>
-#include <iterator>
+#include <functional>
 #include <algorithm>
+#include <iterator>
+
+
+namespace viper {
+
 #ifndef __VIPER_RANGE__
 #define __VIPER_RANGE__
 
@@ -674,4 +678,8 @@ ContainerIn filter(const typename FilterIterator<typename ContainerIn::const_ite
     return out;
 }
 
+
+
+
+} // closing namespace viper
 

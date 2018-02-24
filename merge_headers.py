@@ -24,8 +24,10 @@ def master_header(version_path, filename):
     with open(version_path/filename, 'w') as header_file:
         for header in global_headers:
             header_file.write(f"#include <{header}>\n")
+        header_file.write("\n\nnamespace viper {\n\n")
         for declaration in local_headers.values():
             header_file.write(declaration)
+        header_file.write("\n\n} // closing namespace viper\n\n")
 
 
 def include(master_header, local_header):

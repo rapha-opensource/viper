@@ -46,6 +46,14 @@ It some instances where Viper is return a lazy-evaluation object, it can even be
 
 # Examples
 
+The trivial include statement are omitted for clarity in the following examples.
+Also assuming:
+```c++
+#include "viper.h"
+
+using namespace viper;
+```
+
 ## Enumerate elements of an Container
 ```c++
 std::vector<char> vc = {'a', 'b', 'c'};
