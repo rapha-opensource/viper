@@ -3,6 +3,8 @@
 #include "catch.hpp"
 #include "../viper.h"
 
+using namespace viper;
+
 
 TEST_CASE(" make sure merged header has all the interfaces ", " [merged] ") {
 

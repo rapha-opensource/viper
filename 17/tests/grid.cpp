@@ -71,6 +71,9 @@ TEST_CASE(" grid ", "[grid]") {
         for( auto&& element : col_0 ) { element += 7; }
 
         REQUIRE( rectangle == std::array<int, rows*cols>{ 7, 1, 2, 10, 4, 5 } );
+
+        col_0[0] = 33;
+        REQUIRE( col_0[0] == 33 );
         
     }
 
